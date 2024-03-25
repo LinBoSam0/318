@@ -47,84 +47,130 @@ namespace LengthCalculator
 
         }
 
-        private void txtCM_KeyUp(object sender, EventArgs e)
-        {
-            double douCM; //宣告一個double變數，變數名稱叫douCM
 
-            douCM = Convert.ToDouble(txtCM.Text); //從txtCM輸入文字框取得輸入的文字，並且轉換成double的資料型態
+        // 全域變數
+string strInput; // 字串型態的strInput變數
+double douOutput; // double浮點數型態的douOutput變數
 
-            txtM.Text = string.Format("{0:0.##########}", douCM / 100);
-            txtKM.Text = string.Format("{0:0.##########}", douCM / 100000);
-            txtIn.Text = string.Format("{0:0.##########}", douCM / 2.54);
-            txtFt.Text = string.Format("{0:0.##########}", douCM / 30.48);
-            txtYard.Text = string.Format("{0:0.##########}", douCM / 91.44);
-            //將douCM的數值除以100，也就是從公分轉換成公尺
-            //透過string.Format格式化成小數點後共10位的數字，轉型成文字型態，在txtM顯示結果
-        }
+private void txtCM_KeyUp(object sender, EventArgs e)
+{
+    strInput = txtCM.Text; 
 
-        private void txtM_KeyUp(object sender, KeyEventArgs e)
-        {
-            double douM; //宣告一個double變數，變數名稱叫douM
+    if (double.TryParse(strInput, out douOutput) == true)
+    {
+        txtM.Text = string.Format("{0:0.##########}", douOutput / 100);
+        txtKM.Text = string.Format("{0:0.##########}", douOutput / 100000);
+        txtIn.Text = string.Format("{0:0.##########}", douOutput / 2.54);
+        txtFt.Text = string.Format("{0:0.##########}", douOutput / 30.48);
+        txtYard.Text = string.Format("{0:0.##########}", douOutput / 91.44);
+    }
+    else
+    {
+        txtInfo.Text = "請輸入數字";
+        txtCM.Text = "";        
+    }
+}
 
-            douM = Convert.ToDouble(txtM.Text); //從txtM輸入文字框取得輸入的文字，並且轉換成double的資料型態
+private void txtM_KeyUp(object sender, KeyEventArgs e)
+ {
+     strInput = txtM.Text;
 
-            txtCM.Text = string.Format("{0:0.##########}", douM * 100);
-            txtKM.Text = string.Format("{0:0.##########}", douM * 0.001);
-            txtIn.Text = string.Format("{0:0.##########}", douM * 39.37);
-            txtFt.Text = string.Format("{0:0.##########}", douM * 3.28);
-            txtYard.Text = string.Format("{0:0.##########}", douM * 1.09);
-        }
+     if (double.TryParse(strInput, out douOutput) == true)
+            {
+
+     txtCM.Text = string.Format("{0:0.##########}", douOutput * 100);
+     txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.001);
+     txtIn.Text = string.Format("{0:0.##########}", douOutput * 39.37);
+     txtFt.Text = string.Format("{0:0.##########}", douOutput * 3.28);
+     txtYard.Text = string.Format("{0:0.##########}", douOutput * 1.09);
+     }
+     else
+    {
+        txtInfo.Text = "請輸入數字";
+        txtM.Text = "";
+     }
+}
 
         private void txtKM_KeyUp(object sender, KeyEventArgs e)
         {
-            double douKM; //宣告一個double變數，變數名稱叫douKM
+            strInput = txtKM.Text; 
 
-            douKM = Convert.ToDouble(txtKM.Text); //從txtKM輸入文字框取得輸入的文字，並且轉換成double的資料型態
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
 
-            txtCM.Text = string.Format("{0:0.##########}", douKM *100);
-            txtM.Text = string.Format("{0:0.##########}", douKM * 1000);
-            txtIn.Text = string.Format("{0:0.##########}", douKM *39370.1);
-            txtFt.Text = string.Format("{0:0.##########}", douKM *3280.84);
-            txtYard.Text = string.Format("{0:0.##########}", douKM *1093.61);
+            txtCM.Text = string.Format("{0:0.##########}", douOutput * 100);
+            txtM.Text = string.Format("{0:0.##########}", douOutput * 1000);
+            txtIn.Text = string.Format("{0:0.##########}", douOutput * 39370.1);
+            txtFt.Text = string.Format("{0:0.##########}", douOutput * 3280.84);
+            txtYard.Text = string.Format("{0:0.##########}", douOutput * 1093.61);
         }
+    else
+    {
+        txtInfo.Text = "請輸入數字";
+        txtKM.Text = "";        
+    }
+}
 
         private void txtIn_KeyUp(object sender, KeyEventArgs e)
         {
-            double douIn; //宣告一個double變數，變數名稱叫douIn
+            strInput = txtIn.Text; 
 
-            douIn = Convert.ToDouble(txtIn.Text); //從txtIn輸入文字框取得輸入的文字，並且轉換成double的資料型態
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
 
-            txtCM.Text = string.Format("{0:0.##########}", douIn *2.54);
-            txtM.Text = string.Format("{0:0.##########}", douIn *0.0254);
-            txtKM.Text = string.Format("{0:0.##########}", douIn *0.0000254);
-            txtFt.Text = string.Format("{0:0.##########}", douIn *0.0833);
-            txtYard.Text = string.Format("{0:0.##########}", douIn *0.0278);
-        }
+            txtCM.Text = string.Format("{0:0.##########}", douOutput * 2.54);
+            txtM.Text = string.Format("{0:0.##########}", douOutput * 0.0254);
+            txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.0000254);
+            txtFt.Text = string.Format("{0:0.##########}", douOutput * 0.0833);
+            txtYard.Text = string.Format("{0:0.##########}", douOutput * 0.0278);
+         }
+            else
+            {
+            txtInfo.Text = "請輸入數字";
+            txtIn.Text = "";
+            }
+
+}
 
         private void txtFt_KeyUp(object sender, KeyEventArgs e)
         {
-            double douFt; //宣告一個double變數，變數名稱叫douFt
+            strInput = txtFt.Text;
 
-            douFt = Convert.ToDouble(txtFt.Text); //從txtFt輸入文字框取得輸入的文字，並且轉換成double的資料型態
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
 
-            txtCM.Text = string.Format("{0:0.##########}", douFt *30.48);
-            txtM.Text = string.Format("{0:0.##########}", douFt *0.3048);
-            txtKM.Text = string.Format("{0:0.##########}", douFt *0.0003048);
-            txtIn.Text = string.Format("{0:0.##########}", douFt *12);
-            txtYard.Text = string.Format("{0:0.##########}", douFt *0.3333);
+            txtCM.Text = string.Format("{0:0.##########}", douOutput * 30.48);
+            txtM.Text = string.Format("{0:0.##########}", douOutput * 0.3048);
+            txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.0003048);
+            txtIn.Text = string.Format("{0:0.##########}", douOutput * 12);
+            txtYard.Text = string.Format("{0:0.##########}", douOutput * 0.3333);
+            }
+            else
+            {
+                txtInfo.Text = "請輸入數字";
+                txtFt.Text = "";
+            }
         }
 
         private void txtYard_KeyUp(object sender, KeyEventArgs e)
         {
-            double douYard; //宣告一個double變數，變數名稱叫douYard
+            strInput = txtYard.Text; 
 
-            douYard = Convert.ToDouble(txtYard.Text); //從txtYard輸入文字框取得輸入的文字，並且轉換成double的資料型態
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
 
-            txtCM.Text = string.Format("{0:0.##########}", douYard *91.44);
-            txtM.Text = string.Format("{0:0.##########}", douYard *0.9144);
-            txtKM.Text = string.Format("{0:0.##########}", douYard *0.0009144);
-            txtIn.Text = string.Format("{0:0.##########}", douYard *36);
-            txtFt.Text = string.Format("{0:0.##########}", douYard *3);
+            txtCM.Text = string.Format("{0:0.##########}", douOutput * 91.44);
+            txtM.Text = string.Format("{0:0.##########}", douOutput * 0.9144);
+            txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.0009144);
+            txtIn.Text = string.Format("{0:0.##########}", douOutput * 36);
+            txtFt.Text = string.Format("{0:0.##########}", douOutput * 3);
+            }
+            else
+            {
+                txtInfo.Text = "請輸入數字";
+                txtYard.Text = "";
+            }
+
         }
 
         private void btnAllClear_Click(object sender, EventArgs e)
@@ -135,6 +181,7 @@ namespace LengthCalculator
             txtIn.Text = "";
             txtFt.Text = "";
             txtYard.Text = "";
+            txtInfo.Text = "";
         }
     }
 }

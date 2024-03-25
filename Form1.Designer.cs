@@ -60,7 +60,7 @@
             // 
             this.txtCM.Location = new System.Drawing.Point(119, 186);
             this.txtCM.Name = "txtCM";
-            this.txtCM.Size = new System.Drawing.Size(63, 25);
+            this.txtCM.Size = new System.Drawing.Size(75, 25);
             this.txtCM.TabIndex = 1;
             this.txtCM.TextChanged += new System.EventHandler(this.txtCM_TextChanged);
             this.txtCM.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCM_KeyUp);
@@ -69,8 +69,9 @@
             // 
             this.txtM.Location = new System.Drawing.Point(237, 186);
             this.txtM.Name = "txtM";
-            this.txtM.Size = new System.Drawing.Size(63, 25);
+            this.txtM.Size = new System.Drawing.Size(73, 25);
             this.txtM.TabIndex = 3;
+            this.txtM.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtM_KeyUp);
             // 
             // label2
             // 
@@ -87,8 +88,9 @@
             // 
             this.txtKM.Location = new System.Drawing.Point(361, 186);
             this.txtKM.Name = "txtKM";
-            this.txtKM.Size = new System.Drawing.Size(63, 25);
+            this.txtKM.Size = new System.Drawing.Size(81, 25);
             this.txtKM.TabIndex = 5;
+            this.txtKM.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtKM_KeyUp);
             // 
             // label3
             // 
@@ -104,8 +106,9 @@
             // 
             this.txtYard.Location = new System.Drawing.Point(361, 297);
             this.txtYard.Name = "txtYard";
-            this.txtYard.Size = new System.Drawing.Size(63, 25);
+            this.txtYard.Size = new System.Drawing.Size(81, 25);
             this.txtYard.TabIndex = 11;
+            this.txtYard.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtYard_KeyUp);
             // 
             // label4
             // 
@@ -121,8 +124,9 @@
             // 
             this.txtFt.Location = new System.Drawing.Point(237, 297);
             this.txtFt.Name = "txtFt";
-            this.txtFt.Size = new System.Drawing.Size(63, 25);
+            this.txtFt.Size = new System.Drawing.Size(73, 25);
             this.txtFt.TabIndex = 9;
+            this.txtFt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFt_KeyUp);
             // 
             // label5
             // 
@@ -137,8 +141,9 @@
             // 
             this.txtIn.Location = new System.Drawing.Point(119, 297);
             this.txtIn.Name = "txtIn";
-            this.txtIn.Size = new System.Drawing.Size(63, 25);
+            this.txtIn.Size = new System.Drawing.Size(75, 25);
             this.txtIn.TabIndex = 7;
+            this.txtIn.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtIn_KeyUp);
             // 
             // label6
             // 
@@ -158,7 +163,7 @@
             this.btnAllClear.TabIndex = 12;
             this.btnAllClear.Text = "清除";
             this.btnAllClear.UseVisualStyleBackColor = true;
-            this.btnAllClear.Click += new System.EventHandler(this.button1_Click);
+            this.btnAllClear.Click += new System.EventHandler(this.btnAllClear_Click);
             // 
             // label7
             // 
